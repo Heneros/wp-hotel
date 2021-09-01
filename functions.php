@@ -16,6 +16,11 @@ function ho_setup(){
     register_nav_menu('menu-header', 'Menu in header');
     register_nav_menu('menu-body', 'Menu in body');
     register_nav_menu('menu in footer', 'Menu in footer');
+
+    add_theme_support('title-tag');
+    
+    add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 
 
