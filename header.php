@@ -17,14 +17,18 @@
         <section class="nav__top">
             <p class="questions">
                 <b  class="one"> Questions? Need Help?</b>   Call us on
-                <a href="tel:+123-456-1500">(+123) 456 1500</a> 
+                <a href="tel:+<?php 
+                echo  the_field('phone_number');
+                ?>"><?php 
+                echo  the_field('phone_number');
+                ?></a> 
             </p>
             <p class="gift__card">
-                <img src="img/gift.svg" alt="gift">
+                <img src="<?php echo _ho_assets_path('/img/gift.svg');?>" alt="gift">
                     BTP Gift Card
             </p> 
             <p>    
-                <img src="img/star.svg" alt="star">
+                <img src="<?php echo _ho_assets_path('/img/star.svg');?>" alt="star">
                 Loyalty Program
             </p>
         </section>
@@ -39,22 +43,22 @@
                 <form method="POST">
                     <input type="search" placeholder="Search Location" name="search" class="search__navbar">
                     <span class="search">
-                        <img src="img/search.svg" alt="">
+                        <img src="<?php echo _ho_assets_path('/img/search.svg');?>" alt="">
                     </span>
                 </form>
             </div>
             <div class="user__information navbar__element">
                 <a href="#!" class="card"  >
-                    <img src="img/card.svg"alt="card">
+                    <img src="<?php echo _ho_assets_path('/img/card.svg');?>"alt="card">
                     <p class="num__card">2</p>
                 </a>
                 <a  href="#!" class="profile">
-                    <img src="img/profile.jpg" class="profile__picture" alt="profile picture">
+                    <img src="<?php echo _ho_assets_path('/img/profile.jpg');?>"  class="profile__picture" alt="profile picture">
                    <span class="user">Yagami</span> 
                 </a>
                    <div class="dropdown">
                     <button class="dropbtn">
-                        <img src="img/sign-down.svg" alt="">
+                        <img src="<?php echo _ho_assets_path('/img/sign-down.svg');?> " alt="">
                     </button>
                     <div class="dropdown-content">
                     <a href="#!">Registration</a>
