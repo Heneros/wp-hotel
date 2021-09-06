@@ -1,18 +1,17 @@
-"use strict";
 
-$(document).ready(function () {
-  $(".rate-yo-navbar").rateYo({
-    ratedFill: "#F2994A",
-    rating: 5,
-    starWidth: "17px",
-    normalFill: "#c4c4c4"
-  });
-  $(".rate-yo").rateYo({
-    ratedFill: "#F2994A",
-    rating: 5,
-    starWidth: "17px",
-    normalFill: "#c4c4c4"
-  });
+(function($) {
+  // $(".rate-yo-navbar").rateYo({
+  //   ratedFill: "#F2994A",
+  //   rating: 5,
+  //   starWidth: "17px",
+  //   normalFill: "#c4c4c4"
+  // });
+  // $(".rate-yo").rateYo({
+  //   ratedFill: "#F2994A",
+  //   rating: 5,
+  //   starWidth: "17px",
+  //   normalFill: "#c4c4c4"
+  // });
   $("ul a").on("click", function (e) {
     e.preventDefault();
     var href = $(this).attr("href");
@@ -22,8 +21,8 @@ $(document).ready(function () {
   });
   $(".banner-slider").slick({
     dots: false,
-    prevArrow: '<button class="banner-section__slider-btn banner-section__slider-btnprev"><img src="img/arrow-left.svg" alt= ""></button>',
-    nextArrow: '<button class="banner-section__slider-btn banner-section__slider-btnnext"><img src="img/arrow-right.svg" alt=""></button>',
+    prevArrow: '<button class="banner-section__slider-btn banner-section__slider-btnprev"></button>',
+    nextArrow: '<button class="banner-section__slider-btn banner-section__slider-btnnext"></button>',
     responsive: [{
       breakpoint: 730,
       settings: {
@@ -49,4 +48,5 @@ $(document).ready(function () {
   $('.menu__btn').on('click', function () {
     $('.menu-mobile__list').toggleClass('menu-mobile__list--active');
   });
-});
+})( jQuery );
+

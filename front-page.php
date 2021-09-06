@@ -38,16 +38,16 @@
             <div class="container">
                 <div class="banner-slider">
                     <a href="#!" class="link__slider">
-                        <img src="img/slider-img.png" alt="banner-img" class="banner__img">
+                        <img src="<?php echo _ho_assets_path('img/slider-img.png');?>" alt="banner-img" class="banner__img">
                         </a>
                         <a href="#!" class="link__slider">
-                            <img src="img/slider-img-2.jpg" alt="banner-img" class="banner__img">
+                            <img src="<?php echo _ho_assets_path('img/slider-img-2.jpg');?>" alt="banner-img" class="banner__img">
                         </a>
                         <a href="#!" class="link__slider">
-                            <img src="img/slider-img-3.jpg" alt="banner-img" class="banner__img">
+                            <img src="<?php echo _ho_assets_path('img/slider-img-3.jpg');?>" alt="banner-img" class="banner__img">
                         </a>
                         <a href="#!" class="link__slider">
-                            <img src="img/slider-img-5.jpg" alt="banner-img" class="banner__img">
+                            <img src="<?php echo _ho_assets_path('img/slider-img-4.jpg');?>" alt="banner-img" class="banner__img">
                         </a>
                 </div>
             </div>
@@ -597,13 +597,13 @@
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M26 0H0V26H26V0ZM4.6593 17.7519L13.1233 10.33L21.5873 17.7519L22.9059 16.2481L13.7826 8.24813L13.1233 7.67L12.464 8.24813L3.3407 16.2481L4.6593 17.7519Z" fill="black"/>
 		</svg>
 	</a>
-    <script src="js/script.js.map"></script>   
+    <!-- <script src="js/script.js.map"></script>   
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.rateyo.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/script.js"></script>  
     <script src="js/script-main.js"></script> 
-    <script src="js/main.js"></script>  
+    <script src="js/main.js"></script>   -->
 
 </body>
 </html>
