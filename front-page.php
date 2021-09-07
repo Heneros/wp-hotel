@@ -13,13 +13,20 @@
 </div>
 <!---header__information-->
 <?php
-  $query = new WP_Query([
-   'post_type' => 'post',
-    'posts_per_page' =>  1
-  ]);
-if($query->have_posts()):
-   while($query->have_posts()):
-    $query->the_post();
+
+//   $query = new WP_Query([
+//    'post_type' => 'post',
+//     'posts_per_page' =>  1
+//   ]);
+if(have_posts()):
+   while(have_posts()):
+    the_post();
+
+  $post_id = get_the_ID();
+
+  $header_mainPosts = get_field('show_main_post', $post_id);
+  foreach($header_mainPosts  as $header_mainPost){
+
 ?>
 <div class="wrapper">
     <div class="container">
@@ -29,8 +36,8 @@ if($query->have_posts()):
                 </div>
               </a> <!---Rating-->
                 <div class="header__information-block">
-                <h1 class="header__information-title"><?php the_title(); ?></h1>
-                <p class="header__information-desc"><?php the_excerpt();?></p>
+                <h1 class="header__information-title"><?php echo  $header_mainPost->post_title; ?></h1>
+                <p class="header__information-desc"><?php echo  $header_mainPost->the_excerpt;?></p>
                 <div class="user__rating-btn">
                 User Rattings
                 <p class="number__rating">
@@ -96,6 +103,7 @@ if($query->have_posts()):
     </div>
 </div>
 <?php 
+  }
 endwhile;
 wp_reset_postdata();
 endif; 
