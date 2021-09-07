@@ -12,16 +12,25 @@
     </div>
 </div>
 <!---header__information-->
+<?php
+  $query = new WP_Query([
+   'post_type' => 'post',
+    'posts_per_page' =>  1
+  ]);
+if($query->have_posts()):
+   while($query->have_posts()):
+    $query->the_post();
+?>
 <div class="wrapper">
     <div class="container">
         <div class="header__information">
             <a href="#!" class="rate">
                 <div class="rate-yo-navbar">
-                </div> 
+                </div>
               </a> <!---Rating-->
                 <div class="header__information-block">
-                <h1 class="header__information-title">GRAND HILTON HOTEL</h1>
-                <p class="header__information-desc">Half-Board/ All Inclusive + Complimentary Activities + Child Stays Free</p>
+                <h1 class="header__information-title"><?php the_title(); ?></h1>
+                <p class="header__information-desc"><?php the_excerpt();?></p>
                 <div class="user__rating-btn">
                 User Rattings
                 <p class="number__rating">
@@ -31,7 +40,7 @@
              </div>
         </div> <!---header__information-->
     </div>
-    </div>  
+    </div>
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
@@ -75,9 +84,8 @@
                         1 x Room
                     </p>
                     <p class="booking__number">
-                       <a href="tel:12100">12100</a> 
+                       <a href="tel:12100">12100</a>
                     </p>
-    
                  </div>
                  <button   class="options__booking">View Other Options</button>
                 </div>
@@ -87,6 +95,11 @@
         </section>
     </div>
 </div>
+<?php 
+endwhile;
+wp_reset_postdata();
+endif; 
+?>
 <div class="wrapper">
     <div class="container">
        <nav class="cards">
