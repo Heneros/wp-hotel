@@ -19,3 +19,20 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
     height: 18px;
     background-image: url('../img/arrow-right.svg');
 }
+
+.rate{
+    display: flex;
+}
+.rmp-rating-widget .rmp-icon--ratings{
+    font-size: 1.5em;
+}
+.rmp-rating-widget__results .js-rmp-results,.rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__results {
+   display: none !important;
+}
+.rmp-widgets-container.rmp-wp-plugin.rmp-main-container .rmp-rating-widget__results,
+.rmp-results-widget__visual-rating {
+    display: none !important;
+}
+.rmp-results-widget__vote-count{
+    display: none !important;
+}

@@ -25,23 +25,29 @@ if(have_posts()):
   $post_id = get_the_ID();
 
   $header_mainPosts = get_field('show_main_post', $post_id);
+  $header_description = get_field('short_description_header', $post_id);
   foreach($header_mainPosts  as $header_mainPost){
-
-?>
+  ?>
 <div class="wrapper">
     <div class="container">
         <div class="header__information">
             <a href="#!" class="rate">
                 <div class="rate-yo-navbar">
+                <?php echo do_shortcode('[ratemypost] ')?>
                 </div>
-              </a> <!---Rating-->
+              </a> 
+              <!---Rating-->
                 <div class="header__information-block">
                 <h1 class="header__information-title"><?php echo  $header_mainPost->post_title; ?></h1>
-                <p class="header__information-desc"><?php echo  $header_mainPost->the_excerpt;?></p>
+                <p class="header__information-desc"><?php
+            //    echo $header_mainPost->post_excerpt
+            echo $header_mainPost->$header_description['short_description_header'][0];
+                ?>
+                 </p>
                 <div class="user__rating-btn">
                 User Rattings
                 <p class="number__rating">
-                4.5/S
+                <?php echo do_shortcode('[ratemypost-result] ')?> /5
                 </p>
                   </div>
              </div>
