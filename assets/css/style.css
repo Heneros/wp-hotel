@@ -36,3 +36,19 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
 .rmp-results-widget__vote-count{
     display: none !important;
 }
+
+.header__information .user__rating-btn{
+    height: 48px;
+}
+
+.number__rating::after {
+    content: " /5";
+    position: relative;
+    display: block;
+    left: 25px;
+    bottom: 23.5px;
+    font-size: 23px;
+}
+.header__information .user__rating-btn .number__rating{
+    padding-right: 14px;
+}
