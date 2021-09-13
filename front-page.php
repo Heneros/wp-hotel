@@ -18,9 +18,9 @@ if(have_posts()):
   $post_id = get_the_ID();
   $header_mainPosts = get_field('show_main_post', $post_id);
   $header_description = get_field('short_description_header', $post_id);
-
+  $slider_images = get_field('slider_images', $post_id) ;
   foreach($header_mainPosts  as $header_mainPost):
-    $slider_images = get_field('slider_images', $post_id) ;
+
   ?>
 <div class="wrapper">
     <div class="container">
@@ -50,31 +50,21 @@ if(have_posts()):
     </div>
     </div>
     <?php
-    // array(9) {
-    //      ["_edit_lock"]=> array(1) { [0]=> string(12) "1631372056:1" } ["_edit_last"]=> array(1) { [0]=> string(1) "1" } ["short_description_header"]=> array(1) { [0]=> string(5) "ewrwr" } ["_short_description_header"]=> array(1) { [0]=> string(19) "field_61391715651c9" } ["second"]=> array(1) { [0]=> string(5) "44444" } ["_second"]=> array(1) { [0]=> string(19) "field_613927f8ce880" } ["slider_images"]=> array(1) { [0]=> string(58) "a:4:{i:0;s:2:"40";i:1;s:2:"39";i:2;s:2:"38";i:3;s:2:"44";}" } ["_slider_images"]=> array(1) { [0]=> string(19) "field_613cb438b2235" } ["_encloseme"]=> array(1) { [0]=> string(1) "1" }
-    //      }
-    
-   foreach($header_mainPost->$slider_images as $header_mainPost->$slider_image): 
-   ?>
+ 
+   foreach($slider_images as $slider_image):?>
         <a href="#!" class="link__slider">
-        <img src="<?php echo $header_mainPost->$slider_image['slider_images']; ?>" alt="banner-img" class="banner__img">
+        <img src="<?php echo $slider_image; ?>" alt="banner-img" class="banner__img">
         </a> 
-
      <?php   
 endforeach;
-  
-    var_dump($header_mainPost->$slider_images['slider_images']); ?>
+   ?>
     
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
             <div class="container">
                 <div class="banner-slider">
-                    <?php foreach($slider_images as $slider_image):?>
-                        <a href="#!" class="link__slider">
-                        <img src="<?php echo $header_mainPost->$slider_image['slider_images'] ?>" alt="banner-img" class="banner__img">
-                        </a>
-                       <?php endforeach; ?>
+              
                 </div>
             </div>
             <div class="container__banner-section">
