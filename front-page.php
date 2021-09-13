@@ -1,4 +1,8 @@
-<?php get_header();?>
+
+<?php 
+
+
+get_header();?>
 
 
 
@@ -12,15 +16,22 @@
     </div>
 </div>
 <!---header__information-->
+
+
 <?php
 if(have_posts()):
  while(have_posts()) : the_post(); 
-  $post_id = get_the_ID();
+ global $post;
+$page_id = $post->ID;
+
   $header_mainPosts = get_field('show_main_post', $post_id);
   $header_description = get_field('short_description_header', $post_id);
-  $slider_images = get_field('slider_images', $post_id) ;
-  foreach($header_mainPosts  as $header_mainPost):
 
+
+  $selectedPostId = $header_mainPosts[0]->ID;
+  $featured_img_url = wp_get_attachment_url(get_post_thumbnail_id($selectedPostId));
+
+  foreach($header_mainPosts  as $header_mainPost):
   ?>
 <div class="wrapper">
     <div class="container">
@@ -34,7 +45,6 @@ if(have_posts()):
                 <div class="header__information-block">
                 <h1 class="header__information-title"><?php echo  $header_mainPost->post_title; ?></h1>
                 <p class="header__information-desc">
-                
                     <?php
             echo $header_mainPost->$header_description['short_description_header'][0];
                 ?>
@@ -49,24 +59,17 @@ if(have_posts()):
         </div> <!---header__information-->
     </div>
     </div>
-    <?php
- 
-   foreach($slider_images as $slider_image):?>
-        <a href="#!" class="link__slider">
-        <img src="<?php echo $slider_image; ?>" alt="banner-img" class="banner__img">
-        </a> 
-     <?php   
-endforeach;
-   ?>
-    
+
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
             <div class="container">
-                <div class="banner-slider">
-              
-                </div>
+            <div class="banner-slider">
+            <a href="#!" class="link__slider">
+                        <img src="<?php echo $featured_img_url ?>" alt="banner-img" class="banner__img">
+              </a>
             </div>
+          </div>
             <div class="container__banner-section">
                 <div class="booking">
                     <div class="left__information">
