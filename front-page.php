@@ -43,7 +43,7 @@ $page_id = $post->ID;
               </a> 
               <!---Rating-->
                 <div class="header__information-block">
-                <h1 class="header__information-title"><?php echo  $header_mainPost->post_title; ?></h1>
+                <h1 class="header__information-title"><?php echo $header_mainPost->post_title; ?></h1>
                 <p class="header__information-desc">
                     <?php
             echo $header_mainPost->$header_description['short_description_header'][0];
@@ -65,8 +65,10 @@ $page_id = $post->ID;
         <section class="banner-section__information">
             <div class="container">
             <div class="banner-slider">
-            <a href="#!" class="link__slider">
-                        <img src="<?php echo $featured_img_url ?>" alt="banner-img" class="banner__img">
+            <a href="<?php
+              echo $header_mainPost->guid;
+            ?>" class="link__slider">
+                <img src="<?php echo $featured_img_url ?>" title="test123" alt="banner-img" class="banner__img">
               </a>
             </div>
           </div>
@@ -108,7 +110,7 @@ $page_id = $post->ID;
 <?php 
 endforeach;
 endwhile;
-                endif;
+endif;
 ?>
 <div class="wrapper">
     <div class="container">

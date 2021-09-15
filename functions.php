@@ -26,18 +26,11 @@ function ho_setup(){
     register_nav_menu('menu in footer', 'Menu in footer');
 
     add_theme_support('title-tag');
-    
     add_theme_support('custom-logo');
     add_theme_support('post-thumbnails');
 }
 
-add_action('pre_get_posts','allow_pending_posts_wpse_103938');
-function allow_pending_posts_wpse_103938($qry) {
-	if (!is_admin() && current_user_can('upload_files') &&
-            $qry->is_main_query()) {
-		$qry->set('post_status', array('publish','pending','draft'));
-	}
-}
+
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
