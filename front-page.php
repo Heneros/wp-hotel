@@ -22,14 +22,21 @@ get_header();?>
 if(have_posts()):
  while(have_posts()) : the_post(); 
  global $post;
-$page_id = $post->ID;
 
+$post_id = get_the_ID();
   $header_mainPosts = get_field('show_main_post', $post_id);
   $header_description = get_field('short_description_header', $post_id);
 
 
   $selectedPostId = $header_mainPosts[0]->ID;
   $featured_img_url = wp_get_attachment_url(get_post_thumbnail_id($selectedPostId));
+
+  $pricePost =  get_field('price_main', $post_id);
+  $phonePost = get_field('phone_main', $post_id);
+  $roomPost = get_field('rooms',  $post_id);
+  $guests = get_field('guests',  $post_id);
+  $map = get_field('map',  $post_id);
+
 
   foreach($header_mainPosts  as $header_mainPost):
   ?>
@@ -59,15 +66,15 @@ $page_id = $post->ID;
         </div> <!---header__information-->
     </div>
     </div>
-
+    <?php
+    // var_dump($header_mainPost->$map['map'][0]);
+    ?>
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
             <div class="container">
             <div class="banner-slider">
-            <a href="<?php
-              echo $header_mainPost->guid;
-            ?>" class="link__slider">
+            <a href="#!" class="link__slider">
                 <img src="<?php echo $featured_img_url ?>" title="test123" alt="banner-img" class="banner__img">
               </a>
             </div>
@@ -79,7 +86,7 @@ $page_id = $post->ID;
                         price starts as
                     </p>
                     <p class="price__num">
-                        $ 8,500
+                        $ <?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
                     </p>
                     <p class="price__text-second">
                         per room / night
@@ -90,18 +97,24 @@ $page_id = $post->ID;
                 </div>
                 <div class="right__information">
                     <p class="booking__guest">
-                        2 x Guests
+                   <?php echo $header_mainPost->$guests['guests'][0] ?> x Guests
                     </p>
                     <p class="booking__room">
-                        1 x Room
+                        <?php 
+                        echo $header_mainPost->$roomPost['rooms'][0];
+                        ?> x Room
                     </p>
                     <p class="booking__number">
-                       <a href="tel:12100">12100</a>
+                       <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <button   class="options__booking">View Other Options</button>
+                 <button class="options__booking">View Other Options</button>
                 </div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28707.507134391402!2d14.259691273833608!3d40.86079090233506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b0816219d9f13%3A0x58b1f4ed2bd2f6f0!2sHotel%20ibis%20Styles%20Napoli%20Garibaldi!5e0!3m2!1sru!2sua!4v1619035443132!5m2!1sru!2sua" width="353" height="193" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="<?php
+           echo $header_mainPost->$map['map'][0]
+                ?>" width="353" height="193" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                 
+                        
             </div>
             
         </section>

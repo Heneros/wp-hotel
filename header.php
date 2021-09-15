@@ -33,7 +33,7 @@
         </section>
     <div class="container">
         <section id="up" class="navbar">
-            <a class="logo navbar__element" href="#!">
+            <a class="logo navbar__element" href="<?php echo site_url('/')?>">
             BEST
              <span>TOUR</span>  
               PLAN
