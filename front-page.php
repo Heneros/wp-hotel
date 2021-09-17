@@ -19,11 +19,11 @@ get_header();?>
 
 
 <?php
-if(have_posts()):
- while(have_posts()) : the_post(); 
+// if(have_posts()):
+//  while(have_posts()) : the_post(); 
  global $post;
 
-$post_id = get_the_ID();
+  $post_id = get_the_ID();
   $header_mainPosts = get_field('show_main_post', $post_id);
   $header_description = get_field('short_description_header', $post_id);
 
@@ -37,7 +37,7 @@ $post_id = get_the_ID();
   $guests = get_field('guests',  $post_id);
   $map = get_field('map',  $post_id);
 
-
+  
   foreach($header_mainPosts  as $header_mainPost):
   ?>
 <div class="wrapper">
@@ -75,7 +75,7 @@ $post_id = get_the_ID();
             <div class="container">
             <div class="banner-slider">
             <a href="#!" class="link__slider">
-                <img src="<?php echo $featured_img_url ?>" title="test123" alt="banner-img" class="banner__img">
+                <img src="<?php echo  $featured_img_url  ?>" alt="banner-img" class="banner__img">
               </a>
             </div>
           </div>
@@ -113,22 +113,17 @@ $post_id = get_the_ID();
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]
                 ?>" width="353" height="193" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                 
-                        
             </div>
-            
         </section>
     </div>
 </div>
-<?php 
+<?php
 endforeach;
-endwhile;
-endif;
 ?>
 <div class="wrapper">
     <div class="container">
        <nav class="cards">
-           <ul>
+           <!-- <ul>
                <li><a href="#!">
                 Package Summery
                </a>
@@ -157,7 +152,15 @@ endif;
                 Questions & Answers
                </a>
             </li>
-           </ul>
+           </ul> -->
+           <?php
+        wp_nav_menu([
+            'theme_location' => 'menu-body',
+            'container'      => 'ul',
+            'container_id'   => '',
+            'menu_class'     => ''
+        ]);
+        ?>
        </nav>
     </div>  
 </div>    

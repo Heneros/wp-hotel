@@ -52,3 +52,7 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
 .header__information .user__rating-btn .number__rating{
     padding-right: 14px;
 }
+
+.banner-section__information .container__banner-section{
+    flex-basis: 40% !important;
+}

@@ -5,8 +5,15 @@ get_header()
 
      <?php
 
-            get_template_part('theme-parts/slider-home-page');
+            // get_template_part('theme-parts/slider-home-page');
         ?>
+        <img src="<?php
+        echo the_field('image_main');
+        ?>" alt="">
+<?php 
+
+?>
+
         <?php endwhile?>
 <?php
 get_footer();
