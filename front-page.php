@@ -167,31 +167,43 @@ endforeach;
     <div class="wrapper">
     <div class="container">
  <section class="summary">
-            <h1 class="title__summery">Package Summery</h1>
+            <h1 class="title__summery"><?php echo the_field('package_summery_title')?></h1>
             <div class="container__inner">
                 <div class="left__block">
                     <h2>Package Highlights</h2>
                     <ul>
-                        <li>Half Board/ All Inclusive</li>
-                        <li>Child Under 11 Years Stay Free</li>
-                        <li>LUX* Me Spa</li>
-                        <li>Luxurious 5-Star Hotel</li>
-                        <li>Banyan An Adult Only Zone</li>
+                        <?php
+                        if(have_rows('package_highlights')):
+                        while(have_rows('package_highlights')):
+                            the_row();
+                        ?>
+                        <li><?php  the_sub_field('package_highlights_text'); ?></li>
+                        <?php
+                        endwhile;
+                        endif;
+                        ?>
                     </ul>
-         
-
                 </div>
                 <div class="right__block">
                     <h2>Offer Details</h2>
-                   <ul>
-                       <li>Benefit from a special discounted CHILL’OUT OFFER at Grand Hilton Hotel.
-                        </li>
-                   </ul>
-                   <p>* Valid until 30 April 2020</p>
-                   <span>10th March - 30th April 2020</span>
+                    <?php
+                        if(have_rows('offer_details')):
+                        while(have_rows('offer_details')):
+                            the_row();
+                        ?>
+                          <p class="offer_details_text">
+                          <?php  the_sub_field('offer_details_text'); ?>
+                          </p>
+                            <div class="date__detail">
+                   <p>* Valid until    <?php  the_sub_field('offer_details_date_ends'); ?></p>
+                   <div><?php  the_sub_field('offer_details_date'); ?> -  <?php  the_sub_field('offer_details_date_ends'); ?></div>
+                   </div>
+                   <?php
+                        endwhile;
+                        endif;
+                        ?>
                 </div>
             </div>
-        
 </section>
 </div>
 </div> 

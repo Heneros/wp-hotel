@@ -56,3 +56,27 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
 .banner-section__information .container__banner-section{
     flex-basis: 40% !important;
 }
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    max-height: 75px;
+}
+
+.summary .container__inner .right__block span{
+    bottom: 65px;
+}
+.date__detail{
+    justify-content: space-between;
+    display: flex;
+}
+.offer_details_text{
+    padding: 9px 26px;
+    color: #333;
+    background: url(../img/circle.svg) 3px 12px no-repeat;
+    list-style: none;
+    margin: 0;
+    font-style: unset !important;
+    font-size: unset !important;
+    line-height: unset !important;
+}
+
