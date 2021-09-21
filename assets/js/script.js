@@ -1,4 +1,3 @@
-
 (function($) {
   // $(".rate-yo-navbar").rateYo({
   //   ratedFill: "#F2994A",

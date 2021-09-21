@@ -43,4 +43,48 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
+add_action('add_meta_box', 'hotel_meta_boxes');
+add_action('admin_post_nopriv_si-modal-form', 'hotel_modal_form_handler');
+add_action('admin_post_si-modal-form', 'hotel_modal_form_handler');
+
+function hotel_meta_boxes(){
+    add_meta_box(
+        'modal_id',
+        'Form Request',
+        'post'
+    );
+    $fields = [
+
+    ];
+}
+
+function hotel_modal_form_handler(){
+    $name = $_POST['name'] ? $_POST['name'] : 'Anonym';
+    $phone = $_POST['phone'] ? $_POST['phone'] : false;
+    $email = $_POST['email'] ? $_POST['email'] : 'empty';
+    $message = $_POST['message'] ? $_POST['message'] : 'empty';
+    $choice = $_POST['form-post-id'] ? $_POST['form-post-id'] : 'empty';
+
+    if($phone){
+        $name = wp_strip_all_tags($name);
+        $email = wp_strip_all_tags($email);
+        $name = wp_strip_all_tags($name);
+        $message = wp_strip_all_tags($message);
+        $choice = wp_strip_all_tags($choice);
+        $id = wp_insert_post(wp_slash([
+         'post_title' => 'Request №',
+         'post_type' => 'orders',
+         'post_status' => 'publish',
+         'meta_input' =>[
+
+         ]
+
+        ]));
+    }
+
+
+}
+
+
+
 ?>
