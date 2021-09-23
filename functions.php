@@ -54,8 +54,39 @@ function hotel_meta_boxes(){
         'post'
     );
     $fields = [
-
+     'hotel_order_date' => 'Date request: ',
+     'hotel_order_name' => 'Name client:   ',
+     'hotel_order_phone' => 'Phone Client: ',
+     'hotel_order_email' => 'Email client: ',
+     'hotel_order_message' => 'Message client: ',
+     'hotel_order_choice' => 'Type form:   ',
     ];
+    foreach($fields as $slug => $text){
+        add_meta_box(
+            $slug,
+            $text,
+          'hotel_order_fields_cb'
+        );
+    }
+}
+function hotel_order_fields_cb($post_obj, $slug){
+$slug = $slug['args'];
+$data = '';
+switch($slug){
+    case 'hotel_order_date':
+        $data = $post_obj->post_date;
+        break;
+        case 'hotel_order_choice':
+            $id = get_post_meta($post_obj->ID, $slug, true);
+            $title = get_the_title($id);
+            $type = get_post_type_object(get_post_type($id))->labels->name;
+            $data = 'Client choose: <strong>' . $title . '</strong>. <br> Из раздела: <strong>' . $type . '</strong>';
+            default: 
+            $data = get_post_meta($post_obj->ID, $slug, true);
+            $data = $data ? $data : 'No data';
+            break;
+}
+echo  '<p>' . $data .'</p>';
 }
 
 function hotel_modal_form_handler(){
