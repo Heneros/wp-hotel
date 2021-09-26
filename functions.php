@@ -5,6 +5,33 @@
 function _ho_assets_path($path){
     return get_template_directory_uri() . '/assets/' . $path;
 }
+add_action('init', 'hotel_registration_types');
+function hotel_registration_types(){
+    register_post_type('orders', [
+      'labels' => [
+        'name'               => 'Заявки', 
+        'singular_name'      => 'Заявки', 
+        'add_new'            => 'Добавить новую заявку',
+        'add_new_item'       => 'Добавить новую заявку',
+        'edit_item'          => 'Редактировать заявку', 
+        'new_item'           => 'Новая заявка', 
+        'view_item'          => 'Смотреть заявки', 
+        'search_items'       => 'Искать заявку',
+        'not_found'          => 'Не найдено',
+        'not_found_in_trash' => 'Не найдено в корзине', 
+        'parent_item_colon'  => '', 
+        'menu_name'          => 'Заявки', 
+      ],
+      'public'              => false,
+      'show_ui'             => true,
+      'show_in_menu'        => true,
+      'menu_position'       => 20,
+      'menu_icon'           =>'dashicons-format-chat', 
+      'hierarchical'        => false,
+      'supports'            => ['title'],
+      'has_archive' => false
+    ]);
+}
 
 add_action('wp_enqueue_scripts', 'ho_scripts');
 function ho_scripts(){
@@ -43,78 +70,43 @@ if (function_exists('acf_add_options_page')) {
 
 }
 
-add_action('add_meta_box', 'hotel_meta_boxes');
-add_action('admin_post_nopriv_si-modal-form', 'hotel_modal_form_handler');
-add_action('admin_post_si-modal-form', 'hotel_modal_form_handler');
+add_action('add_meta_boxes', 'hotel_meta_boxes');
 
 function hotel_meta_boxes(){
-    add_meta_box(
-        'modal_id',
-        'Form Request',
-        'post'
-    );
     $fields = [
-     'hotel_order_date' => 'Date request: ',
-     'hotel_order_name' => 'Name client:   ',
-     'hotel_order_phone' => 'Phone Client: ',
-     'hotel_order_email' => 'Email client: ',
-     'hotel_order_message' => 'Message client: ',
-     'hotel_order_choice' => 'Type form:   ',
+        'hotel_order_date' => 'Date request: ',
+        'hotel_order_name' => 'Name client:   ',
+        'hotel_order_phone' => 'Phone Client: ',
+        'hotel_order_email' => 'Email client: ',
+        'hotel_order_message' => 'Message client: ',
+        'hotel_order_choice' => 'Type form:',
     ];
     foreach($fields as $slug => $text){
         add_meta_box(
-            $slug,
+            $slug, 
             $text,
-          'hotel_order_fields_cb'
+            'hotel_order_fields_cb',
+            'orders',
+            'advanced',
+            'default',
+            $slug
         );
     }
+
 }
 function hotel_order_fields_cb($post_obj, $slug){
-$slug = $slug['args'];
-$data = '';
-switch($slug){
-    case 'hotel_order_date':
-        $data = $post_obj->post_date;
-        break;
-        case 'hotel_order_choice':
-            $id = get_post_meta($post_obj->ID, $slug, true);
-            $title = get_the_title($id);
-            $type = get_post_type_object(get_post_type($id))->labels->name;
-            $data = 'Client choose: <strong>' . $title . '</strong>. <br> Из раздела: <strong>' . $type . '</strong>';
-            default: 
-            $data = get_post_meta($post_obj->ID, $slug, true);
-            $data = $data ? $data : 'No data';
-            break;
-}
-echo  '<p>' . $data .'</p>';
+    $slug = $slug['args'];
+    $data = get_post_meta($post_obj->ID, $slug, true);
+    $data = $data ? $data : 'No data';
+    echo '<span>'. $data .'</span>';
+    // $date = get_post_meta($post_obj->ID, 'hotel_order_date', true);
+    // $date = $date ? $date : '';
+    // echo '<span>'. $date .'</span>';
 }
 
-function hotel_modal_form_handler(){
-    $name = $_POST['name'] ? $_POST['name'] : 'Anonym';
-    $phone = $_POST['phone'] ? $_POST['phone'] : false;
-    $email = $_POST['email'] ? $_POST['email'] : 'empty';
-    $message = $_POST['message'] ? $_POST['message'] : 'empty';
-    $choice = $_POST['form-post-id'] ? $_POST['form-post-id'] : 'empty';
-
-    if($phone){
-        $name = wp_strip_all_tags($name);
-        $email = wp_strip_all_tags($email);
-        $name = wp_strip_all_tags($name);
-        $message = wp_strip_all_tags($message);
-        $choice = wp_strip_all_tags($choice);
-        $id = wp_insert_post(wp_slash([
-         'post_title' => 'Request №',
-         'post_type' => 'orders',
-         'post_status' => 'publish',
-         'meta_input' =>[
-
-         ]
-
-        ]));
-    }
 
 
-}
+
 
 
 

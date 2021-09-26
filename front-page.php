@@ -19,8 +19,8 @@ get_header();?>
 
 
 <?php
-// if(have_posts()):
-//  while(have_posts()) : the_post(); 
+if(have_posts()):
+ while(have_posts()) : the_post(); 
  global $post;
 
   $post_id = get_the_ID();
@@ -108,7 +108,7 @@ get_header();?>
                        <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <button class="options__booking">View Other Options</button>
+                 <button data-post-id="<?php echo $id?>" class="options__booking">View Other Options</button>
                 </div>
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]
@@ -119,6 +119,8 @@ get_header();?>
 </div>
 <?php
 endforeach;
+endwhile;
+endif;
 ?>
 <div class="wrapper">
     <div class="container">
@@ -629,7 +631,9 @@ endforeach;
 		<div class="popup-dialog">
 			<div class="popup-content">
 				<button class="popup-close">&times;</button>
-				<form action=# enctype=multipart/form-data>
+				<form 
+                action="<?php echo esc_url(admin_url('admin-post.php')) ; ?>"
+                 enctype="multipart/form-data">
 					<h4>Booking Now</h4>
 					<div class=main-form>
 						<div class=form>
