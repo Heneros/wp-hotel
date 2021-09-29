@@ -627,7 +627,7 @@ endif;
         </div>
     </div>
     </footer>           
-    <div class="popup-up" id="form-post-id" data-modal>
+    <div class="popup-up" data-modal>
 		<div class="popup-dialog">
 			<div class="popup-content">
 				<button class="popup-close">&times;</button>
@@ -638,9 +638,10 @@ endif;
 					<div class=main-form>
 						<div class=form>
 							<input type="text" name="name" placeholder="Your Name" required>
-							<input type=text name="phone" placeholder="Your Phone number" required>
-							<input type=text name="email" placeholder="Your email">
+							<input type="text" name="phone" placeholder="Your Phone number" required>
+							<input type="text" name="email" placeholder="Your email">
 							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
+                            <input type="hidden" name="form-post-id">
 							<button class="button button-order">Send</button>
 						</div>
 					</div>
