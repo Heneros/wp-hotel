@@ -632,8 +632,9 @@ endif;
 			<div class="popup-content">
 				<button class="popup-close">&times;</button>
 				<form 
-                action="<?php echo esc_url(admin_url('admin-post.php')) ; ?>"
-                 enctype="multipart/form-data">
+                method="POST"
+                action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
+               >
 					<h4>Booking Now</h4>
 					<div class=main-form>
 						<div class=form>
