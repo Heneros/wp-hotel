@@ -634,7 +634,7 @@ endif;
 				<form 
                 method="POST"
                 action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
-               >
+                 enctype="multipart/form-data">
 					<h4>Booking Now</h4>
 					<div class=main-form>
 						<div class=form>
@@ -644,7 +644,8 @@ endif;
 							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
                             <input type="hidden" name="form-post-id">
 							<button class="button button-order">Send</button>
-						</div>
+                            <input type="hidden" name="action" value="hotel-modal-form">
+                        </div>
 					</div>
 				</form>
 			</div>

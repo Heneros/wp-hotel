@@ -34,6 +34,8 @@ function hotel_registration_types(){
 }
 
 add_action('wp_enqueue_scripts', 'ho_scripts');
+add_action('admin_post_nopriv_hotel-modal-form', 'hotel_modal_form_handler');
+add_action('admin_post_hotel-modal-form', 'hotel_modal_form_handler');
 function ho_scripts(){
     // wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '', true);
    
@@ -92,7 +94,6 @@ function hotel_meta_boxes(){
             $slug
         );
     }
-
 }
 function hotel_order_fields_cb($post_obj, $slug){
     $slug = $slug['args'];
