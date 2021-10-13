@@ -9,18 +9,18 @@ add_action('init', 'hotel_registration_types');
 function hotel_registration_types(){
     register_post_type('orders', [
       'labels' => [
-        'name'               => 'Заявки', 
-        'singular_name'      => 'Заявки', 
-        'add_new'            => 'Добавить новую заявку',
-        'add_new_item'       => 'Добавить новую заявку',
-        'edit_item'          => 'Редактировать заявку', 
-        'new_item'           => 'Новая заявка', 
-        'view_item'          => 'Смотреть заявки', 
-        'search_items'       => 'Искать заявку',
-        'not_found'          => 'Не найдено',
-        'not_found_in_trash' => 'Не найдено в корзине', 
+        'name'               => 'Orders', 
+        'singular_name'      => 'Order', 
+        'add_new'            => 'Add new Order',
+        'add_new_item'       => 'Add new Order',
+        'edit_item'          => 'Edit Order', 
+        'new_item'           => 'New Order', 
+        'view_item'          => 'Watch Orders', 
+        'search_items'       => 'Search Order',
+        'not_found'          => 'Not found',
+        'not_found_in_trash' => 'Not found in bin', 
         'parent_item_colon'  => '', 
-        'menu_name'          => 'Заявки', 
+        'menu_name'          => 'Orders', 
       ],
       'public'              => false,
       'show_ui'             => true,
@@ -111,7 +111,7 @@ function hotel_modal_form_handler(){
     $phone = $_POST['phone'] ? $_POST['phone'] : false;
     $email = $_POST['email'] ? $_POST['email'] : 'empty';
     $message = $_POST['message'] ? $_POST['message'] : 'empty';
-    $choice = $_POST['form-post-id'] ? $_POST['form-post-id'] : 'empty';
+    $choice = $_POST['hotel-modal-form'] ? $_POST['hotel-modal-form'] : 'empty';
 
         if($phone){
             $name = wp_strip_all_tags($name);
@@ -139,6 +139,7 @@ function hotel_modal_form_handler(){
                   update_field('status_order', 'new', $id);
                }
     }
+    header('Location: ' . home_url());
 
 }
 

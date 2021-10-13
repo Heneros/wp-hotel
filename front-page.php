@@ -642,9 +642,10 @@ endif;
 							<input type="text" name="phone" placeholder="Your Phone number" required>
 							<input type="text" name="email" placeholder="Your email">
 							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
-                            <input type="hidden" name="form-post-id">
-							<button class="button button-order">Send</button>
+                 
                             <input type="hidden" name="action" value="hotel-modal-form">
+							<button class="button button-order">Send</button>
+                        
                         </div>
 					</div>
 				</form>
