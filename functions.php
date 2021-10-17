@@ -111,7 +111,7 @@ function hotel_modal_form_handler(){
     $phone = $_POST['phone'] ? $_POST['phone'] : false;
     $email = $_POST['email'] ? $_POST['email'] : 'empty';
     $message = $_POST['message'] ? $_POST['message'] : 'empty';
-    $choice = $_POST['hotel-modal-form'] ? $_POST['hotel-modal-form'] : 'empty';
+    $choice = $_POST['form-post-id'] ? $_POST['form-post-id'] : 'empty';
 
         if($phone){
             $name = wp_strip_all_tags($name);

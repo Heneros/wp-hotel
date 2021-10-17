@@ -108,7 +108,7 @@ if(have_posts()):
                        <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <button data-post-id="<?php echo $id?>" class="options__booking">View Other Options</button>
+                 <a data-post-id="<?php echo $id?>" class="options__booking">View Other Options</a>
                 </div>
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]
@@ -125,36 +125,6 @@ endif;
 <div class="wrapper">
     <div class="container">
        <nav class="cards">
-           <!-- <ul>
-               <li><a href="#!">
-                Package Summery
-               </a>
-            </li>
-               <li><a href="#!">
-                Hotel Information
-               </a>
-            </li>
-               <li><a href="#!">
-                Rooms
-               </a>
-            </li>
-               <li><a href="#!">
-                Facilities & Activities
-               </a>
-            </li>
-               <li><a href="#!">
-                Dining & Entertainment
-               </a>
-            </li>
-               <li><a href="#!">
-                Reviews 
-               </a>
-            </li>
-               <li><a href="#!">
-                Questions & Answers
-               </a>
-            </li>
-           </ul> -->
            <?php
         wp_nav_menu([
             'theme_location' => 'menu-body',
@@ -627,36 +597,7 @@ endif;
         </div>
     </div>
     </footer>           
-    <div class="popup-up" data-modal>
-		<div class="popup-dialog">
-			<div class="popup-content">
-				<button class="popup-close">&times;</button>
-				<form 
-                method="POST"
-                action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
-                 enctype="multipart/form-data">
-					<h4>Booking Now</h4>
-					<div class=main-form>
-						<div class=form>
-							<input type="text" name="name" placeholder="Your Name" required>
-							<input type="text" name="phone" placeholder="Your Phone number" required>
-							<input type="text" name="email" placeholder="Your email">
-							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
-                 
-                            <input type="hidden" name="action" value="hotel-modal-form">
-							<button class="button button-order">Send</button>
-                        
-                        </div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-    <a href="#up" class="pageup">
-		<svg class="up" viewBox="0 0 26 26" fill="black" xmlns="http://www.w3.org/2000/svg">
-			<path fill-rule="evenodd" clip-rule="evenodd" d="M26 0H0V26H26V0ZM4.6593 17.7519L13.1233 10.33L21.5873 17.7519L22.9059 16.2481L13.7826 8.24813L13.1233 7.67L12.464 8.24813L3.3407 16.2481L4.6593 17.7519Z" fill="black"/>
-		</svg>
-	</a>
+  
     <!-- <script src="js/script.js.map"></script>   
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.rateyo.min.js"></script>
@@ -665,7 +606,5 @@ endif;
     <script src="js/script-main.js"></script> 
     <script src="js/main.js"></script>   -->
 
-</body>
-</html>
 
 <?php get_footer();?>
