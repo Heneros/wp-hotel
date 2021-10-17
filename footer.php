@@ -10,12 +10,12 @@
              >
 					<h4>Booking Now</h4>
 					<div class="main-form">
-						<div class="form">
+						<div class="form" id="">
 							<input type="text" name="name" placeholder="Your Name" required>
 							<input type="text" name="phone" placeholder="Your Phone number" required>
 							<input type="text" name="email" placeholder="Your email">
 							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
-                            <button class="button button-order">Send</button>
+                            <button id="div" class="button button-order">Send</button>
                             <input type="hidden" name="action" value="hotel-modal-form">
 							
                         
