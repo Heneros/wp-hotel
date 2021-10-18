@@ -66,9 +66,6 @@ if(have_posts()):
         </div> <!---header__information-->
     </div>
     </div>
-    <?php
-    // var_dump($header_mainPost->$map['map'][0]);
-    ?>
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
@@ -108,7 +105,7 @@ if(have_posts()):
                        <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <a  href="#modal-form" data-post-id="<?php echo $id?>" class="options__booking">View Other Options</a>
+                 <button  href="#modal-form" data-post-id="<?php echo  $header_mainPost->ID ?>" class="options__booking">View Other Options</button>
                 </div>
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]
@@ -118,6 +115,7 @@ if(have_posts()):
     </div>
 </div>
 <?php
+
 endforeach;
 endwhile;
 endif;

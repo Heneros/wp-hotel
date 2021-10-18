@@ -55,25 +55,35 @@
 $('[href="#modal-form"]').on('click', function(e){
  
   e.preventDefault();
-  var target = e.target;
-  var ID = target.attr('data-post-id');
-  var formContainer = target.attr('href');
+  // var target = e.target;
+  // var ID = target.attr('data-post-id');
+  // var formContainer = target.attr('href');
+  // var form = formContainer.find('form');
+  // var input = document.createElement('input');
+  // input.setAttribute('type', 'hidden');
+  // input.setAttribute('name', 'form-post-id');
+  // input.setAttribute('value', ID);
+  // form.append(input);
 
+  // var target = e.target;
+
+// var formContainer = target.attr('href');
+
+var target = e.target;
+var ID = target.getAttribute('data-post-id');
+var btnOld = document.querySelector(".form");
+var input = document.createElement('input');
+input.setAttribute('type', 'hidden');
+input.setAttribute('name', 'form-post-id');
+input.setAttribute('value', ID);
+
+
+btnOld.append(input);
 
 
 });
 
 })( jQuery );
-// $postIdBtn = jquery__WEBPACK_IMPORTED_MODULE_0___default()('[href=\"#modal-form\"]');\n$postIdBtn.on('click', function (e) {\n  e.preventDefault();\n 
-//  var $target = jquery__WEBPACK_IMPORTED_MODULE_0___default()(e.target);\n  
-// var ID = $target.attr('data-post-id');\n 
-//  var formContainer = jquery__WEBPACK_IMPORTED_MODULE_0___default()($target.attr('href'));\n  
-// var form = formContainer.find('form');\n  
-// var input = document.createElement('input');\n  
-// input.setAttribute('type', 'hidden');\n 
-//  input.setAttribute('name', 'form-post-id');\n  
-// input.setAttribute('value', ID);\n 
-// form.append(input);\n});}
 
 
 

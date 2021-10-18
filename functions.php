@@ -97,9 +97,23 @@ function hotel_meta_boxes(){
 }
 function hotel_order_fields_cb($post_obj, $slug){
     $slug = $slug['args'];
-    $data = get_post_meta($post_obj->ID, $slug, true);
-    $data = $data ? $data : 'No data';
-    echo '<span>'. $data .'</span>';
+    $data = '';
+    switch ($slug){
+        case 'hotel_order_date':
+            $data = $post_obj->post_date;
+            break;
+        case 'hotel_order_choice':
+            $id = get_post_meta($post_obj->ID, $slug, true); 
+            $title = get_the_title($id);
+            $type = get_post_type_object(get_post_type($id))->labels->singular_name;
+            $data = 'Client choosed: <strong>' . $title . '</strong>. <br> From section: <strong>' . $type . '</strong>';
+             break;
+        default:
+        $data = get_post_meta($post_obj->ID, $slug, true);
+        $data = $data ? $data : 'No data';
+    }
+
+    echo '<p>'. $data .'</p>';
     // $date = get_post_meta($post_obj->ID, 'hotel_order_date', true);
     // $date = $date ? $date : '';
     // echo '<span>'. $date .'</span>';
