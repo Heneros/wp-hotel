@@ -49,26 +49,8 @@
   });
 
 
-// $(".number__rating").click(function(){
-//   alert("Hello");
-// })
 $('[href="#modal-form"]').on('click', function(e){
- 
   e.preventDefault();
-  // var target = e.target;
-  // var ID = target.attr('data-post-id');
-  // var formContainer = target.attr('href');
-  // var form = formContainer.find('form');
-  // var input = document.createElement('input');
-  // input.setAttribute('type', 'hidden');
-  // input.setAttribute('name', 'form-post-id');
-  // input.setAttribute('value', ID);
-  // form.append(input);
-
-  // var target = e.target;
-
-// var formContainer = target.attr('href');
-
 var target = e.target;
 var ID = target.getAttribute('data-post-id');
 var btnOld = document.querySelector(".form");
@@ -84,25 +66,3 @@ btnOld.append(input);
 });
 
 })( jQuery );
-
-
-
-
-
-// var div;
-// document.body.insertAdjacentHTML('beforeend', div);
-// var y = document.getElementById('org_div1');
-// y.setAttribute('name', 'form-post-id');
-// y.innerHTML = "hello world";
-
-// div.insertAdjacentHTML('beforebegin', '<p>Привет</p>');
-
-
-
-
-// var btnOld = document.querySelector(".form");
-// var input = document.createElement('input');
-// input.setAttribute('type', 'hidden');
-// input.setAttribute('name', 'form-post-id');
-// btnOld.append(input);
-
