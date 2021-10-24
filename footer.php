@@ -23,26 +23,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="popup-up">
-		<div class="popup-dialog">
-			<div class="popup-content">
-				<button class="popup-close">&times;</button>
-				<form 
-                method="POST"
-                action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
-             >
-					<h4>Booking Now</h4>
-					<div class="main-form">
-						<div class="form" id="">
-							<input type="text" name="email" placeholder="Your email">
-                            <button id="div" class="button button-order">Send</button>
-                            <input type="hidden" name="action" value="hotel-modal-form">
-                        </div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+ <div class="popup-email">
+	 <div class="popup-body">
+		 <div class="popup-content-email">
+		 <div class="image__bg">
+		 <img src="<?php echo get_template_directory_uri()?>/assets/img/email-bg.jpg" width="350" height="450" alt="">
+		 </div>
+		 <div class="text__content">
+			 
+		 <form action="">
+				 <input type="email"><br>
+				 <button>Send</button>
+			 </form>
+		 </div>
+		 </div>
+	
+	 </div>
+ </div>
     
     <a href="#up" class="pageup">
 		<svg class="up" viewBox="0 0 26 26" fill="black" xmlns="http://www.w3.org/2000/svg">

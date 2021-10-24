@@ -1143,19 +1143,7 @@
                 n(".options__booking", ".popup-up", ".popup-up  .popup-close"),
                     n(".book__now", ".popup-up", ".popup-up  .popup-close"),
                     (t = ".popup-up"),
-                    setTimeout(function () {
-                        var n;
-                        if (
-                            (document.querySelectorAll("[data-modal]").forEach(function (t) {
-                                "none" !== getComputedStyle(t).display && (n = "block");
-                            }),
-                            !n)
-                        ) {
-                            (document.querySelector(t).style.display = "block"), (document.body.style.overflow = "hidden");
-                            var r = e();
-                            document.body.style.marginRight = "".concat(r, "px");
-                        }
-                    }, 15000);
+                    setTimeout();
             },
             o =
                 (e(34),
