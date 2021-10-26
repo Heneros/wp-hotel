@@ -1142,8 +1142,8 @@
                 }
                 n(".options__booking", ".popup-up", ".popup-up  .popup-close"),
                     n(".book__now", ".popup-up", ".popup-up  .popup-close"),
-                    (t = ".popup-up"),
-                    setTimeout();
+                    (t = ".popup-up")
+                
             },
             o =
                 (e(34),

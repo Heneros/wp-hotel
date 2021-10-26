@@ -58,11 +58,13 @@ var input = document.createElement('input');
 input.setAttribute('type', 'hidden');
 input.setAttribute('name', 'form-post-id');
 input.setAttribute('value', ID);
-
-
 btnOld.append(input);
-
-
 });
+
+$('.popup-email').click(function(){
+
+  $('.popup-email').hide();
+});
+
 
 })( jQuery );
