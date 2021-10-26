@@ -30,14 +30,20 @@
 		 <img src="<?php echo get_template_directory_uri()?>/assets/img/email-bg.jpg" width="350" height="450" alt="">
 		 </div>
 		 <div class="text__content">
-			 
-		 <form action="">
-				 <input type="email"><br>
-				 <button>Send</button>
+		 <button class="popup-close__email">&times;</button>
+		 <H1 class="logo navbar__element" >
+            BEST
+             <span>TOUR</span>  
+              PLAN
+            </H1>
+			<h3>Basic selectors are fundamental selectors; these are the most basic selectors that are frequently</h3>
+			
+		 <form action="POST">
+				 <input type="email" name="email" placeholder="Enter Email"><br>
+				 <button type="submit" class="send__email">Send</button>
 			 </form>
 		 </div>
 		 </div>
-	
 	 </div>
  </div>
     
