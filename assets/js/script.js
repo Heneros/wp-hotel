@@ -61,7 +61,7 @@ input.setAttribute('value', ID);
 btnOld.append(input);
 });
 
-$('.popup-email').click(function(){
+$('.popup-close__email').click(function(){
 
   $('.popup-email').hide();
 });
