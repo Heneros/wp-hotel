@@ -182,6 +182,7 @@ endif;
     <section class="packages">
         <h2>Package Summery Details</h2>
         <div class="conainer__descriptions">
+            
         <div class="box__detail">
             <h3>Purchase Inclusions</h3>
             <ul>
@@ -193,51 +194,7 @@ endif;
                 <li>Free Secure Parking</li>
             </ul>
         </div>
-        <div class="box__detail">
-            <h3>Complimentary Land Based Activities</h3>
-            <ul>
-                <li>Gym</li>
-                <li>Beach Volley</li>
-                <li>Table tennis</li>
-                <li>Soccer balls</li>
-                <li>Yoga</li>
-                <li>Unlimited access to driving range</li>
-            </ul>
-        </div>
-        <div class="box__detail">
-            <h3>Complimentary Water Based Activities</h3>
-            <ul>
-                <li>Water skiing</li>
-                <li>Windsurfing</li>
-                <li>Pedal boats</li>
-                <li>Kayaking</li>
-                <li>Aqua Gym</li>
-                <li>Glass bottom boat trips</li>
-            </ul>
-        </div>
-    </div>
-    <div class="container conainer__description_second">
-        <div class="box__detail">
-            <h3>Meal Plan Available</h3>
-            <ul>
-                <li>Half Board</li>
-                <li>All Inclusive</li>
-            </ul>
-        </div>
-        <div class="box__detail">
-            <h3>Entertainment</h3>
-            <ul>
-                <li>Live music</li>
-                <li>DJ & Mauritian Dance Show</li>
-            </ul>
-        </div>
-        <div class="box__detail">
-            <h3>Check In & Check Out</h3>
-            <ul>
-                <li>Check In Time 14:00</li>
-                <li>Check Out Time 11:00</li>
-            </ul>
-        </div>
+
     </div>
     </section>
 </div>
