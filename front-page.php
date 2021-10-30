@@ -177,23 +177,46 @@ endif;
 </section>
 </div>
 </div> 
+<?php
+
+?>
+
 <div class="wrapper">
 <div class="container">
     <section class="packages">
         <h2>Package Summery Details</h2>
         <div class="conainer__descriptions">
-            
+        <?php
+                        if(have_rows('package_summery_details')):
+                        while(have_rows('package_summery_details')):
+                            the_row();
+                            if( have_rows('group_text') ):              
+                                while( have_rows('group_text') ):
+                                           the_row(); 
+                        ?>
         <div class="box__detail">
-            <h3>Purchase Inclusions</h3>
+            <h3><?php the_sub_field('hotel_box_title'); ?></h3>
             <ul>
-                <li>Room as per selection</li>
-                <li>Half Board or All Inclusive Meal Plan</li>
-                <li>Complimentary Land & Water activities</li>
-                <li>Child Under 11 years old stays free</li>
-                <li>Free Wi-Fi</li>
-                <li>Free Secure Parking</li>
+            <?php
+       if( have_rows('group-list') ):  
+                                while( have_rows('group-list') ):
+                                           the_row();
+                                           ?>
+                <li><?php echo get_sub_field('list_hotel_box_items');?> </li>
+                <?php
+                  endwhile;
+                endif;
+                   ?>
             </ul>
+
         </div>
+        <?php               endwhile;
+                    endif;
+
+                        endwhile;
+                    endif;
+
+        ?>
 
     </div>
     </section>

@@ -170,3 +170,10 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
     color: #000;
     border: none;
 }
+
+.box__detail{
+    flex-basis: 20%;
+}
+.packages .conainer__descriptions{
+    flex-wrap: wrap;
+}

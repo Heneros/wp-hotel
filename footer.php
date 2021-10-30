@@ -23,7 +23,7 @@
 			</div>
 		</div>
 	</div>
- <div class="popup-email">
+ <!-- <div class="popup-email">
 	 <div class="popup-body">
 		 <div class="popup-content-email">
 		 <div class="image__bg">
@@ -45,7 +45,7 @@
 		 </div>
 		 </div>
 	 </div>
- </div>
+ </div> -->
     
     <a href="#up" class="pageup">
 		<svg class="up" viewBox="0 0 26 26" fill="black" xmlns="http://www.w3.org/2000/svg">
