@@ -66,6 +66,7 @@ if(have_posts()):
         </div> <!---header__information-->
     </div>
     </div>
+
     <div class="wrapper">
       <div class="container">
         <section class="banner-section__information">
@@ -208,16 +209,14 @@ endif;
                 endif;
                    ?>
             </ul>
-
         </div>
-        <?php               endwhile;
-                    endif;
-
-                        endwhile;
-                    endif;
+        <?php              
+         endwhile;
+         endif;
+         endwhile;
+         endif;
 
         ?>
-
     </div>
     </section>
 </div>
@@ -227,8 +226,22 @@ endif;
     <section id="hotels" class="other__offers">
         <h1>Other Packages</h1>
         <div class="container__offers">
+            <?php
+            $query = new WP_Query([
+             'post_type' => 'post',
+             'posts_per_page' => -1,
+            ]);
+
+   while($query->have_posts()):
+    $query->the_post();
+    $featured_img_url_box = get_the_post_thumbnail_url();
+            ?>
+
             <div class="block__offer blue__haven">
-                <div class="img__blue-beach">
+     <div style="background-image:url(<?php 
+           echo  $featured_img_url_box;
+
+                 ?>);" class="img__blue-beach">
                 </div>
                 <img src="img/beach.png" class="adaptive__beach" alt="">
                 <div class="text">
@@ -236,7 +249,9 @@ endif;
                         <div class="rate-yo">
                         </div> 
                       </a> <!---Rating-->
-                      <h3>Hotel Blue Haven</h3>
+                      <h3><?php 
+                      the_title();
+                      ; ?></h3>
                       <ul class="prices__list-adaptive">
                         <li class=" price__old" >
                            $ 10,50
@@ -247,14 +262,13 @@ endif;
                     </ul>
                     <div class="text__beach">
                       <p class="paragr__haven">
-                        Aute quis duis excepteur excepteur ipsum cat eiusmod consectetur enim laborum magna llit. Ipsum est fugiat velit ea llamco do esse ut in veniam sun in onsequat. Aute quis duis epteur excepteur ipsum occaecat eiusmod nsectetur enim laborum magna mollit. Ipsum est fugiat velit ea ullamco do
                       </p>
                       <span class="place">1749 Wheeler Ridge  Delaware</span>
                       <span class="guests">2 x Guests</span>
                       <span class="room">1 x Room</span>
                      <ul class="prices__list">
                          <li class="prices price__old" >
-                            $ 10,50
+                            $ <?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
                          </li>
                          <li class="prices price__new">
                             $ 8,500
@@ -264,7 +278,7 @@ endif;
                      <button class="book__now">Book Now</button>
                     </div>
             </div>
-            
+<?php endwhile;?>
         </div>
     </section>
 </div>  
