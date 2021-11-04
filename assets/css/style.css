@@ -177,3 +177,16 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
 .packages .conainer__descriptions{
     flex-wrap: wrap;
 }
+
+.other__offers .container__offers .blue__haven{
+    flex: 1 1 35%;
+    min-width: 0;
+    max-width: 543px;
+    margin: 25px 30px;
+    height: auto;
+}
+
+.other__offers .container__offers .blue__haven .img__blue-beach{
+    max-height: 500px !important;
+    background-size: unset !important;
+}

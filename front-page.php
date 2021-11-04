@@ -229,7 +229,7 @@ endif;
             <?php
             $query = new WP_Query([
              'post_type' => 'post',
-             'posts_per_page' => -1,
+             'posts_per_page' => 4,
             ]);
 
    while($query->have_posts()):
@@ -262,16 +262,20 @@ endif;
                     </ul>
                     <div class="text__beach">
                       <p class="paragr__haven">
+                          <?php
+                            the_content();
+                          ?>
                       </p>
                       <span class="place">1749 Wheeler Ridge  Delaware</span>
-                      <span class="guests">2 x Guests</span>
-                      <span class="room">1 x Room</span>
+                      <span class="guests"><?php echo the_field('guests');?>  x Guests</span>
+                      <span class="room"><?php echo the_field('rooms');?> x Room</span>
                      <ul class="prices__list">
                          <li class="prices price__old" >
-                            $ <?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
+                         <?php echo the_field('price_old');?>
+                            $ 
                          </li>
                          <li class="prices price__new">
-                            $ 8,500
+                            $<?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
                          </li>
                      </ul>
                     </div>
