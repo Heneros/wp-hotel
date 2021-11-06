@@ -190,3 +190,12 @@ button,hr,input{overflow:visible}a,legend{color:inherit}.breadcrumbs,textarea{ov
     max-height: 500px !important;
     background-size: unset !important;
 }
+
+
+@media(max-width: 1300px){
+    .other__offers .container__offers .blue__haven{
+        flex: 100%;
+        align-items: center;
+    justify-content: center;
+    }
+}

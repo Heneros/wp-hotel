@@ -231,19 +231,16 @@ endif;
              'post_type' => 'post',
              'posts_per_page' => 4,
             ]);
-
    while($query->have_posts()):
     $query->the_post();
     $featured_img_url_box = get_the_post_thumbnail_url();
             ?>
-
             <div class="block__offer blue__haven">
      <div style="background-image:url(<?php 
            echo  $featured_img_url_box;
-
                  ?>);" class="img__blue-beach">
                 </div>
-                <img src="img/beach.png" class="adaptive__beach" alt="">
+            
                 <div class="text">
                     <a href="#!" class="small__rating">
                         <div class="rate-yo">
