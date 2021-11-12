@@ -31,6 +31,30 @@ function hotel_registration_types(){
       'supports'            => ['title'],
       'has_archive' => false
     ]);
+    register_post_type('review', [
+        'labels' => [
+            'name' => 'Review',
+            'singular_name'      => 'Order', 
+            'add_new'            => 'Add new Review',
+            'add_new_item'       => 'Add new Review',
+            'edit_item'          => 'Edit Review', 
+            'new_item'           => 'New Review', 
+            'view_item'          => 'Watch Review', 
+            'search_items'       => 'Search Reviews',
+            'not_found'          => 'Not found',
+            'not_found_in_trash' => 'Not found in bin', 
+            'parent_item_colon'  => '', 
+            'menu_name'          => 'Reviews', 
+        ],
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'menu_position'       => 20,
+        'menu_icon'           =>'dashicons-format-chat', 
+        'hierarchical'        => false,
+        'supports'            => ['title'],
+        'has_archive' => false
+    ]);
 }
 
 add_action('wp_enqueue_scripts', 'ho_scripts');
@@ -61,7 +85,6 @@ function ho_setup(){
 
 
 if (function_exists('acf_add_options_page')) {
-
     acf_add_options_page(array(
         'page_title' => 'Theme General Settings',
         'menu_title' => 'Theme Settings',
@@ -69,7 +92,6 @@ if (function_exists('acf_add_options_page')) {
         'capability' => 'edit_posts',
         'redirect' => false
     ));
-
 }
 
 add_action('add_meta_boxes', 'hotel_meta_boxes');

@@ -106,7 +106,7 @@ if(have_posts()):
                        <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <button  href="#modal-form" data-post-id="<?php echo  $header_mainPost->ID ?>" class="options__booking">View Other Options</button>
+                 <button data-post-id="<?php echo  $header_mainPost->ID ?>" class="options__booking">View Other Options</button>
                 </div>
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]
@@ -178,10 +178,6 @@ endif;
 </section>
 </div>
 </div> 
-<?php
-
-?>
-
 <div class="wrapper">
 <div class="container">
     <section class="packages">
@@ -221,75 +217,10 @@ endif;
     </section>
 </div>
 </div>
-<div class="wrapper">
-<div class="container">
-    <section id="hotels" class="other__offers">
-        <h1>Other Packages</h1>
-        <div class="container__offers">
-            <?php
-            $query = new WP_Query([
-             'post_type' => 'post',
-             'posts_per_page' => 4,
-            ]);
-   while($query->have_posts()):
-    $query->the_post();
-    $featured_img_url_box = get_the_post_thumbnail_url();
-            ?>
-            <div class="block__offer blue__haven">
-     <div style="background-image:url(<?php 
-           echo  $featured_img_url_box;
-                 ?>);" class="img__blue-beach">
-                </div>
-            
-                <div class="text">
-                    <a href="#!" class="small__rating">
-                        <div class="rate-yo">
-                        </div> 
-                      </a> <!---Rating-->
-                      <h3><?php 
-                      the_title();
-                      ; ?></h3>
-                      <ul class="prices__list-adaptive">
-                        <li class=" price__old" >
-                        <?php if(get_field('price_old')):?>
-                     
-                     $     <?php echo the_field('price_old');?>
-                     <?php endif;?>
-                        </li>
-                        <li class="price__new">
-                        $<?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
-                        </li>
-                    </ul>
-                    <div class="text__beach">
-                      <p class="paragr__haven">
-                          <?php
-                            the_content();
-                          ?>
-                      </p>
-                      <span class="place">1749 Wheeler Ridge  Delaware</span>
-                      <span class="guests"><?php echo the_field('guests');?>  x Guests</span>
-                      <span class="room"><?php echo the_field('rooms');?> x Room</span>
-                     <ul class="prices__list">
-                         <li class="prices price__old" >
-                             <?php if(get_field('price_old')):?>
-                     
-                            $     <?php echo the_field('price_old');?>
-                            <?php endif;?>
-                         </li>
-                         <li class="prices price__new">
-                            $<?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
-                         </li>
-                     </ul>
-                    </div>
-                     <button class="book__now">Book Now</button>
-                    </div>
-            </div>
-<?php endwhile;?>
-        </div>
-    </section>
-</div>  
-</div>
 <?php
+// Slider Guests Sectio
+get_template_part('theme-parts/other-packages');
+
 // Slider Guests Sectio
 get_template_part('theme-parts/slider-guests');
 ?>

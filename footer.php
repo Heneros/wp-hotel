@@ -23,6 +23,28 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="popup-review" >
+		<div class="popup-dialog">
+			<div class="popup-content">
+				<button class="popup-close-review">&times;</button>
+				<form 
+                method="POST"
+                action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
+             >
+					<h4>Leave Review</h4>
+					<div class="main-form">
+						<div class="form" id="">
+							<input type="text" name="name" placeholder="Your Name" required>
+							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
+                            <button id="div" class="button button-order">Send</button>
+                            <input type="hidden" name="action" value="hotel-modal-form">
+                        </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
  <!-- <div class="popup-email">
 	 <div class="popup-body">
 		 <div class="popup-content-email">

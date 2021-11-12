@@ -62,8 +62,15 @@ btnOld.append(input);
 });
 
 $('.popup-close__email').click(function(){
-
   $('.popup-email').hide();
+});
+
+$("#review__btn").on("click", function(){
+   $(".popup-review").css("display", "block");
+});
+
+$('.popup-close-review').click(function(){
+  $('.popup-review').css("display", "none");
 });
 
 

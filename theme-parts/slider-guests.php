@@ -18,7 +18,7 @@
                 <img src="img/guest1.png" alt="guest">
                 <span class="name__guest">
                     <?php
-                 echo  $long;
+                 echo $long;
                   ?></span>
                 <p class="date__stayed"><?php the_date('y-M-d')?></p>
                 <a href="#!" class="rating">
