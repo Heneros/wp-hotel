@@ -24,7 +24,7 @@ foreach($header_mainPosts  as $header_mainPost):
     $query->the_post();
     $featured_img_url_box = get_the_post_thumbnail_url();
             ?>
-            <div class="block__offer blue__haven">
+ <div class="block__offer blue__haven">
      <div style="background-image:url(<?php 
            echo  $featured_img_url_box;
                  ?>);" class="img__blue-beach">
@@ -53,7 +53,7 @@ foreach($header_mainPosts  as $header_mainPost):
                             the_content();
                           ?>
                       </p>
-                      <span class="place">1749 Wheeler Ridge  Delaware</span>
+                      <span class="place">17349 Wheeler Ridge  Delaware</span>
                       <span class="guests"><?php echo the_field('guests');?>  x Guests</span>
                       <span class="room"><?php echo the_field('rooms');?> x Room</span>
                      <ul class="prices__list">
@@ -67,11 +67,10 @@ foreach($header_mainPosts  as $header_mainPost):
                          </li>
                      </ul>
                     </div>
-                     <button id="review__btn">REVIEW</button>
+                     <button class="review__btn">REVIEW</button>
                     </div>
             </div>
 <?php 
-
 endwhile;
 endforeach;
 ?>

@@ -1,5 +1,4 @@
 
-
 <div class="popup-up" >
 		<div class="popup-dialog">
 			<div class="popup-content">
@@ -36,9 +35,9 @@
 					<div class="main-form">
 						<div class="form" id="">
 							<input type="text" name="name" placeholder="Your Name" required>
-							<textarea class="textarea__popup" name="message" placeholder="Your comment" rows=2></textarea>
+							<textarea class="textarea__popup" name="message" placeholder="Your review" rows=2></textarea>
                             <button id="div" class="button button-order">Send</button>
-                            <input type="hidden" name="action" value="hotel-modal-form">
+                            <input type="hidden" name="action" value="hotel-modal-review">
                         </div>
 					</div>
 				</form>
