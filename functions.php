@@ -31,9 +31,9 @@ function hotel_registration_types(){
       'supports'            => ['title'],
       'has_archive' => false
     ]);
-    register_post_type('review', [
+    register_post_type('reviews', [
         'labels' => [
-            'name' => 'Review',
+            'name' => 'Reviews',
             'singular_name'      => 'Order', 
             'add_new'            => 'Add new Review',
             'add_new_item'       => 'Add new Review',
@@ -92,6 +92,58 @@ if (function_exists('acf_add_options_page')) {
         'capability' => 'edit_posts',
         'redirect' => false
     ));
+}
+
+
+add_action('add_meta_boxes', 'reviews_meta_boxes');
+
+
+function reviews_meta_boxes(){
+    $fields = [
+      'hotel_review_date' => 'Date request: ',
+      'hotel_review_name' => 'Name:',
+      'hotel_review_comment' => 'Review: ',
+      'hotel_review_choice' => 'Type Form: '
+    ];
+    foreach($fields as $slug => $text){
+       add_meta_box(
+           $slug,
+           $text,
+           'hotel_review_fields_cb',
+           'reviews',
+           'advanced',
+           'default',
+           $slug
+       );
+    }
+}
+
+
+function hotel_review_fields_cb($post_obj, $slug){
+   $slug = $slug['args'];
+   $date = '';
+   switch($slug){
+       case 'hotel_review_date':
+        $data = $post_obj->post_date;
+        break;
+        case 'hotel_review_choice':
+            $id = get_post_meta($post_obj->ID, $slug, true);
+            $title = get_the_title($id);
+            $type = get_post_type_object(get_post_type($id))->labels->singular_name;
+            $data = 'Client write review: <strong>' . $title . '</strong>. <br> From section: <strong>' . $type . '</strong>';
+            break;
+            default:
+            $data = get_post_meta($post_obj->ID, $slug, true);
+            $data = $data ? $data : 'No data';
+   }
+   echo '<p>' . $data . '</p>';
+}
+
+
+function review_modal_form_handler(){
+    $name = $_POST['name'] ? $_POST['name'] : false;
+    $message = $_POST['review'] ? $_POST['review'] : false;
+    $choice = $_POST['form-review-id'] ? $_POST['form-review-id'] : 'empty';
 }
 
 add_action('add_meta_boxes', 'hotel_meta_boxes');

@@ -106,7 +106,7 @@ if(have_posts()):
                        <a href="tel: <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?>"> <?php echo $header_mainPost->$phonePost['phone_main'][0]; ?></a>
                     </p>
                  </div>
-                 <button data-post-id="<?php echo  $header_mainPost->ID ?>" class="options__booking">View Other Options</button>
+                 <button  data-post-id="<?php echo  $header_mainPost->ID ?>" class="options__booking">View Other Options</button>
                 </div>
                 <iframe src="<?php
            echo $header_mainPost->$map['map'][0]

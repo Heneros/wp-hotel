@@ -61,6 +61,23 @@ input.setAttribute('value', ID);
 btnOld.append(input);
 });
 
+
+
+
+$('[href="#modal-form"]').on('click', function(e){
+  e.preventDefault();
+var target = e.target;
+var ID = target.getAttribute('data-review-id');
+var btnOld = document.querySelector(".form");
+var input = document.createElement('input');
+input.setAttribute('type', 'hidden');
+input.setAttribute('name', 'form-review-id');
+input.setAttribute('value', ID);
+btnOld.append(input);
+});
+
+
+
 $('.popup-close__email').click(function(){
   $('.popup-email').hide();
 });
