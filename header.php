@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap" rel="stylesheet">
-    <title>Hotel Booking Freebie</title>
+    <?php is_home() ? bloginfo() : wp_title('||'); ?>
     <?php wp_head(); ?>
 </head> 
 <body> 

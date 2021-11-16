@@ -67,7 +67,7 @@ foreach($header_mainPosts  as $header_mainPost):
                          </li>
                      </ul>
                     </div>
-                     <button data-review-id="<?php echo  $header_mainPost->ID ?>"  class="review__btn">REVIEW</button>
+                     <a  href="#popup " data-review-id="<?php echo  $header_mainPost->ID ?>"  class="review__btn">REVIEW</a>
                     </div>
             </div>
 <?php 
