@@ -44,23 +44,12 @@
 			</div>
 		</div>
 	</div> -->
-	<?php
-	$post_id = get_the_ID();
 
-	$query = new WP_Query([
-				'post_type' => 'post',
-				'posts_per_page' => 12,
-			   ]);
-
-	while($query->have_posts()):
-    $query->the_post();
-    $featured_img_url_box = get_the_post_thumbnail_url();
-	?>
-<div class="popup"  data-review-id="<?php echo  $header_mainPost->ID ?>" <?php echo $post_id?> id="popup"> 
+<div class="popup" <?php echo $post_id?> id="popup"> 
           <div class="popup-inner">
             <div class="popup__photo">
               <img src="<?php 
-           echo  $featured_img_url_box;
+
                  ?>" alt="">
             </div>
             <div class="popup__text">
@@ -69,7 +58,6 @@
                 method="POST"
                 action="<?php echo esc_url(admin_url('admin-post.php'));  ?>"
              >
-					<h4>Leave Review</h4>
 					<div class="main-form">
 						<div class="form" id="">
 							<input type="text" name="name" placeholder="Your Name" required>
@@ -83,10 +71,7 @@
             <a class="popup__close" href="#close">X</a>
           </div>
         </div>
-		<?php
-		endwhile;
-		?>
-
+	
 
  <!-- <div class="popup-email">
 	 <div class="popup-body">
