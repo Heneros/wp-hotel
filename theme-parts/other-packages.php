@@ -24,7 +24,7 @@ foreach($header_mainPosts  as $header_mainPost):
     $query->the_post();
     $featured_img_url_box = get_the_post_thumbnail_url();
             ?>
- <div class="block__offer blue__haven">
+ <div  data-review-id="" class="block__offer blue__haven">
      <div style="background-image:url(<?php 
            echo  $featured_img_url_box;
                  ?>);" class="img__blue-beach">
@@ -67,7 +67,7 @@ foreach($header_mainPosts  as $header_mainPost):
                          </li>
                      </ul>
                     </div>
-                     <a  href="#popup " data-review-id="<?php echo  $header_mainPost->ID ?>"  class="review__btn">REVIEW</a>
+                     <a  href="#popup-<?php echo get_the_ID() ?>" data-review-id="<?php echo get_the_ID() ?>"   class="review__btn">REVIEW</a>
                     </div>
             </div>
 <?php 

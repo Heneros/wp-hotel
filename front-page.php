@@ -1,10 +1,7 @@
 
 <?php 
 
-
 get_header();?>
-
-
 
     <div class="wrapper">
     <div class="container"> 
@@ -120,6 +117,7 @@ if(have_posts()):
 endforeach;
 endwhile;
 endif;
+wp_reset_postdata()
 ?>
 <div class="wrapper">
     <div class="container">
@@ -152,6 +150,7 @@ endif;
                         <?php
                         endwhile;
                         endif;
+                        wp_reset_postdata()
                         ?>
                     </ul>
                 </div>
@@ -172,6 +171,7 @@ endif;
                    <?php
                         endwhile;
                         endif;
+                        wp_reset_postdata()
                         ?>
                 </div>
             </div>
@@ -211,7 +211,7 @@ endif;
          endif;
          endwhile;
          endif;
-
+         wp_reset_postdata()
         ?>
     </div>
     </section>
@@ -449,5 +449,6 @@ get_template_part('theme-parts/slider-guests');
     <script src="js/script-main.js"></script> 
     <script src="js/main.js"></script>   -->
 
-
+  
+<?php get_template_part('theme-parts/modal-review'); ?>
 <?php get_footer();?>
