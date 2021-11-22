@@ -5,12 +5,12 @@
         <div class="slider-guests">
          <?php
             $query = new WP_Query([
-                'post_type' => 'orders',
+                'post_type' => 'reviews',
                 'posts_per_page' => -1
             ]);
             while($query->have_posts()):
                 $query->the_post();
-                $long = get_post_meta($post->ID, 'hotel_order_name',true);
+                $long = get_post_meta($post->ID, 'hotel_review_name',true);
                 $status = get_field('status_order');
            if($status['value'] == 'done'):
             ?>

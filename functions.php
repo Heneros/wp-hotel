@@ -34,7 +34,7 @@ function hotel_registration_types(){
     register_post_type('reviews', [
         'labels' => [
             'name' => 'Reviews',
-            'singular_name'      => 'Order', 
+            'singular_name'      => 'Reviews', 
             'add_new'            => 'Add new Review',
             'add_new_item'       => 'Add new Review',
             'edit_item'          => 'Edit Review', 
@@ -58,8 +58,15 @@ function hotel_registration_types(){
 }
 
 add_action('wp_enqueue_scripts', 'ho_scripts');
+
 add_action('admin_post_nopriv_hotel-modal-form', 'hotel_modal_form_handler');
 add_action('admin_post_hotel-modal-form', 'hotel_modal_form_handler');
+
+add_action('admin_post_nopriv_hotel-modal-review', 'review_modal_form_handler');
+
+add_action('admin_post_hotel-modal-review', 'review_modal_form_handler');
+
+
 function ho_scripts(){
     // wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '', true);
    
@@ -144,10 +151,35 @@ function review_modal_form_handler(){
     $name = $_POST['name'] ? $_POST['name'] : false;
     $message = $_POST['review'] ? $_POST['review'] : false;
     $choice = $_POST['form-review-id'] ? $_POST['form-review-id'] : 'empty';
+
+    if($name){
+        $name = wp_strip_all_tags($name);
+        $message = wp_strip_all_tags($message);
+        $choice = wp_strip_all_tags($choice);
+
+        $id = wp_insert_post(wp_slash([
+            'post_title' => 'Review № ',
+            'post_type' => 'reviews',
+            'post_status' => 'publish',
+            'meta_input' =>[
+                'hotel_review_name' =>   $name,
+                'hotel_review_phone' => $message,
+                'hotel_review_choice' => $choice ,
+            ]
+        ]));
+        if(!$id == 0){
+            wp_update_post([
+                'ID' => $id,
+                'post_title' => 'Review № ' . $id,
+            ]);
+            update_field('status_review', 'new', $id);
+        }
+    }
+    header("Location: " . home_url());
 }
 
-add_action('add_meta_boxes', 'hotel_meta_boxes');
 
+add_action('add_meta_boxes', 'hotel_meta_boxes');
 function hotel_meta_boxes(){
     $fields = [
         'hotel_order_date' => 'Date request: ',
