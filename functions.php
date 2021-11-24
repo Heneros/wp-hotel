@@ -163,7 +163,7 @@ function review_modal_form_handler(){
             'post_status' => 'publish',
             'meta_input' =>[
                 'hotel_review_name' =>   $name,
-                'hotel_review_phone' => $message,
+                'hotel_review_comment' => $message,
                 'hotel_review_choice' => $choice ,
             ]
         ]));

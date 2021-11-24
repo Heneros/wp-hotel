@@ -11,6 +11,8 @@
             while($query->have_posts()):
                 $query->the_post();
                 $long = get_post_meta($post->ID, 'hotel_review_name',true);
+                $review = get_post_meta($post->ID, 'hotel_review_comment', true);
+
                 $status = get_field('status_order');
            if($status['value'] == 'done'):
             ?>
@@ -26,6 +28,9 @@
                     </div> 
                   </a> <!---Rating-->
                 <p class="guest__review">
+                    <?php
+                    echo $review;
+                   ?>
                 </p>
             </div>
          <?php
