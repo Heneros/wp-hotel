@@ -440,15 +440,5 @@ get_template_part('theme-parts/slider-guests');
         </div>
     </div>
     </footer>           
-  
-    <!-- <script src="js/script.js.map"></script>   
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.rateyo.min.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/script.js"></script>  
-    <script src="js/script-main.js"></script> 
-    <script src="js/main.js"></script>   -->
-
-  
 <?php get_template_part('theme-parts/modal-review'); ?>
 <?php get_footer();?>

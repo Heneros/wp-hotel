@@ -26,12 +26,27 @@ if ( $first_query->have_posts() ) {
                 action="<?php echo esc_url(admin_url('admin-post.php'));  ?>">
 					<div class="main-form">
 						<div class="form" <?php echo $i; ?> id="">
-							<input type="text" name="name" placeholder="Your Name" required>
-							<textarea class="textarea__popup" name="review" placeholder="Your review" rows=2></textarea>
-                            <button 
+            <div class="name__review">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <label for="name" class="txt">
+            <i class="fas fa-user"></i>
+
+
+          </label>
+            </div>
+              <div class="textarea__review">
+              <textarea class="textarea__review" name="review" placeholder="Your review" rows=2></textarea>
+              <label for="review" class="txt">
+              <i class="fa fa-comment" aria-hidden="true"></i>  
+          </label>
+              </div>
+	
+              <button 
                             data-review-id="<?php echo  $post_id ?>" 
                             id="div"
-                             class="button button-order">Send</button>
+                             class="button button-review">
+                             <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                             Send</button>
                             <input type="hidden" name="action" value="hotel-modal-review">
                         </div>
 					</div>
