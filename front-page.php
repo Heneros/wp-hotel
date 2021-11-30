@@ -235,7 +235,7 @@ get_template_part('theme-parts/slider-guests');
                         Newsletter
                     </span>
                 </div>
-                <form>
+                <form class="email__subscribe">
                     <input type="email" class="email__letter" name="" placeholder="Your email address" id="">
                     <button class="btn__email">Send</button>
                 </form>
