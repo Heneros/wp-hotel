@@ -37,7 +37,7 @@ foreach($header_mainPosts  as $header_mainPost):
                       <h3><?php 
                       the_title();
                       ; ?></h3>
-                      <ul class="prices__list-adaptive">
+                      <!-- <ul class="prices__list-adaptive">
                         <li class=" price__old" >
                         <?php if(get_field('price_old')):?>
                      $     <?php echo the_field('price_old');?>
@@ -46,7 +46,7 @@ foreach($header_mainPosts  as $header_mainPost):
                         <li class="price__new">
                         $<?php echo $header_mainPost->$pricePost['price_main'][0]; ?>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="text__beach">
                       <p class="paragr__haven">
                           <?php

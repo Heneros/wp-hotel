@@ -938,10 +938,10 @@ iframe {
     padding-bottom: 20px;
 }
 @media only screen and (max-width: 1030px) {
-    .cards {
+    /* .cards {
         overflow-x: scroll;
         white-space: nowrap;
-    }
+    } */
 }
 .summary {
     position: relative;
@@ -1662,7 +1662,7 @@ iframe {
     .img__blue-beach,
     .prices__list,
     .prices__list .prices {
-        display: none;
+        /* display: none; */
     }
     .prices__list-adaptive {
         display: block;
@@ -1715,16 +1715,16 @@ iframe {
 }
 @media only screen and (max-width: 650px) {
     .prices {
-        bottom: 253px !important;
+        /* bottom: 253px !important; */
         left: 0 !important;
         position: relative;
     }
     .paragr__haven {
         padding-top: 35px;
     }
-    .prices__list {
+    /* .prices__list {
         display: inherit;
-    }
+    } */
     .prices__list li {
         padding-right: 15px;
     }
@@ -2632,5 +2632,35 @@ button .button-order {
         margin-bottom: 40px;
         display: flex;
         flex-direction: column;
+    }
+}
+@media(max-width: 1300px){
+    .other__offers .container__offers{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media(max-width: 800px){
+    .other__offers .container__offers .blue__haven .img__blue-beach{
+         width: 100%;
+         right: unset;
+         background-size: cover !important;
+    }
+    .other__offers .container__offers .blue__haven::after{
+        left: 0;
+    }
+    /* .cards__wrapper{
+        overflow-x: scroll;
+    }
+    .cards{
+        width: 1000px;
+    } */
+    .other__offers .container__offers .blue__haven .text{
+        flex: 1 1 86%;
+    }
+}
+@media(max-width: 520px){
+    .other__offers .container__offers .blue__haven{
+        margin: 25px 0px;
     }
 }

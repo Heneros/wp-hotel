@@ -121,6 +121,7 @@ wp_reset_postdata()
 ?>
 <div class="wrapper">
     <div class="container">
+        <div class="cards__wrapper">
        <nav class="cards">
            <?php
         wp_nav_menu([
@@ -131,6 +132,7 @@ wp_reset_postdata()
         ]);
         ?>
        </nav>
+       </div>
     </div>  
 </div>    
     <div class="wrapper">
