@@ -671,7 +671,7 @@ template {
     -webkit-align-items: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    width: 100%;
+    /* width: 100%; */
     list-style: none;
 }
 .breadcrumbs li {
@@ -2083,7 +2083,8 @@ button .button-order {
         white-space: nowrap;
     }
     footer .footer__container-bottom input {
-        width: unset;
+        width: 100% !important;
+        max-width: 95%;
     }
 }
 @media only screen and (max-width: 950px) {
@@ -2111,7 +2112,7 @@ button .button-order {
         padding: 25px 0;
     }
     footer .footer__container-bottom textarea {
-        width: 85%;
+        /* width: 85%; */
     }
     footer .footer__container-bottom .form__btn {
         width: 130px;
@@ -2662,5 +2663,35 @@ button .button-order {
 @media(max-width: 520px){
     .other__offers .container__offers .blue__haven{
         margin: 25px 0px;
+    }
+}
+@media(max-width: 900px){
+    footer .footer__container-bottom{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    footer .footer__container-bottom .footer-contact__information{
+        flex-basis: 100%;
+    }
+    footer .footer__container-bottom input {
+        width: 100% !important;
+        max-width: 97%;
+    }
+    footer .footer__container-bottom textarea{
+        width: 97%;
+    }
+}
+@media(max-width: 950px){
+    .packages .conainer__descriptions h3{
+        padding-left: 42px;
+        left: unset;
+    }
+}
+@media(max-width: 650px){
+    .container {
+      
     }
 }
