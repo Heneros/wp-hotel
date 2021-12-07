@@ -34,11 +34,12 @@
                         <span class="title__footer-social">
                             Social Network
                         </span>
-                        <a href="#!">
+                        <div class="ya-share2 social-share" data-curtain data-shape="round" data-lang="en" data-services="facebook,whatsapp"></div>
+                        <!-- <a href="#!">
                             <img src="img/social-facebook.svg" alt="">
                         </a>
                         <a href="#!"><img src="img/social-youtube.svg" alt=""></a>
-                        <a href="#!"><img src="img/social-instagram.svg" alt=""></a>
+                        <a href="#!"><img src="img/social-instagram.svg" alt=""></a> -->
                     </div>
 
                 </div>
@@ -234,4 +235,5 @@
     
 </body>
 </html>
+<script src="https://yastatic.net/share2/share.js"></script>
 <?php wp_footer(); ?> 
