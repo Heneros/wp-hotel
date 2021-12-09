@@ -5,7 +5,7 @@ get_header();?>
 
     <div class="wrapper">
     <div class="container"> 
-        <ul class="breadcrumbs">
+        <ul class="breadcrumbs wow fadeIn">
             <li class=""><a href="#!">Home</a></li>
             <li class="breadcrumbs__item "><a href="#!">Flash Offers</a></li>
             <li class="breadcrumbs__item "><a href="#!">Grand Hilton Hotel</a></li>
@@ -39,7 +39,7 @@ if(have_posts()):
   ?>
 <div class="wrapper">
     <div class="container">
-        <div class="header__information">
+        <div class="header__information wow fadeIn">
             <a href="#!" class="rate">
                 <div class="rate-yo-navbar">
                 <?php echo do_shortcode('[ratemypost] ')?>
@@ -66,9 +66,9 @@ if(have_posts()):
 
     <div class=" wrapper">
       <div class="container">
-        <section class="banner-section__information wow fadeInUp"  data-wow-duration="2s" data-wow-delay="5s">
+        <section class="banner-section__information wow fadeIn">
             <div class="container">
-            <div class="banner-slider ">
+            <div class="banner-slider">
             <a href="#!" class="link__slider">
                 <img src="<?php echo  $featured_img_url  ?>" alt="banner-img" class="banner__img">
               </a>
@@ -121,7 +121,7 @@ wp_reset_postdata()
 ?>
 <div class="wrapper">
     <div class="container">
-        <div class="cards__wrapper">
+        <div class="cards__wrapper wow fadeIn">
        <nav class="cards">
            <?php
         wp_nav_menu([
@@ -135,12 +135,13 @@ wp_reset_postdata()
        </div>
     </div>  
 </div>    
-    <div class="wrapper">
+
+    <div class="wrapper ">
     <div class="container">
- <section class="summary">
-            <h1 class="title__summery"><?php echo the_field('package_summery_title')?></h1>
+ <section class="summary" >
+            <h1 class="title__summery "><?php echo the_field('package_summery_title')?></h1>
             <div class="container__inner">
-                <div class="left__block">
+                <div class="left__block wow slideInLeft">
                     <h2>Package Highlights</h2>
                     <ul>
                         <?php
@@ -156,7 +157,7 @@ wp_reset_postdata()
                         ?>
                     </ul>
                 </div>
-                <div class="right__block">
+                <div class="right__block wow slideInRight">
                     <h2>Offer Details</h2>
                     <?php
                         if(have_rows('offer_details')):
@@ -180,9 +181,9 @@ wp_reset_postdata()
 </section>
 </div>
 </div> 
-<div class="wrapper  wow fadeInUp"  data-wow-duration="2s" data-wow-delay="5s">
+<div class="wrapper">
 <div class="container">
-    <section class="packages">
+    <section class="packages wow fadeIn">
         <h2>Package Summery Details</h2>
         <div class="conainer__descriptions">
         <?php
@@ -226,7 +227,7 @@ get_template_part('theme-parts/other-packages');
 // Slider Guests Sectio
 get_template_part('theme-parts/slider-guests');
 ?>
-    <div class="banner-newsletter" id="subscribe-us">
+    <div class="banner-newsletter  wow fadeInUp" id="subscribe-us">
         <div class="layer">
             <div class="wrapper">
             <div class="container">
@@ -247,7 +248,7 @@ get_template_part('theme-parts/slider-guests');
         </div>
     </div>
 
-    <section class="other-activities" id="activities">
+    <section class="other-activities wow fadeInUp" id="activities">
      <div class="wrapper">
         <div class="container">
              <h1>Other Activities</h1>

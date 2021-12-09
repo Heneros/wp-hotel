@@ -2690,8 +2690,11 @@ button .button-order {
         left: unset;
     }
 }
-@media(max-width: 650px){
-    .container {
-      
-    }
-}
+.block{
+    height: 300px;
+    width: 250px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+   }

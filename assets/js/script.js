@@ -51,7 +51,7 @@
     $('.menu-mobile__list').toggleClass('menu-mobile__list--active');
   });
 
-
+  new WOW().init();
 $('[href="#modal-form"]').on('click', function(e){
   e.preventDefault();
 var target = e.target;
@@ -97,5 +97,5 @@ $('.popup-close-review').click(function(){
 // });
 
 
-new WOW().init();
+
 })( jQuery );

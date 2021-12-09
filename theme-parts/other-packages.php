@@ -12,7 +12,7 @@ foreach($header_mainPosts  as $header_mainPost):
 ?>
 <div class="wrapper">
 <div class="container">
-    <section id="hotels" class="other__offers">
+    <section  class="other__offers wow fadeInUp" id="hotels">
         <h1>Other Packages</h1>
         <div class="container__offers">
             <?php

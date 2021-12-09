@@ -1,6 +1,6 @@
 <div class="wrapper">
 <div class="container">
-    <section class="guests__block" id="reviews">
+    <section class="guests__block wow fadeInUp" id="reviews">
         <h1>What people thinks about us</h1>
         <div class="slider-guests">
          <?php

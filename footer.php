@@ -3,14 +3,14 @@
         <div class="wrapper">
         <div class="container">
             <div class="container__footer-top">
-                <div class="block__footer-top">
+                <div class="block__footer-top  wow fadeInUp">
                     <div class="text__content-footer">
                         <span>   Best </span> <br>
                         <span class="red__title"> tour</span>  <br>    
                            <span>plan</span> 
                     </div>
                 </div>
-                <div class="block__footer-top">
+                <div class="block__footer-top  wow fadeInUp">
                     <span class="title__footer-top">ALL CATEGORIES
                     </span>
                     <ul>
@@ -22,7 +22,7 @@
 						?>
                     </ul>
                 </div>
-                <div class="block__footer-top">
+                <div class="block__footer-top  wow fadeInUp">
                     <span class="title__footer-top">ADDITIONAL INFORMATION
                     </span>
                    <?php
@@ -30,7 +30,7 @@
 						'theme_location' => 'menu-footer'
 					])
 				   ?>
-                    <div class="social__media-block">
+                    <div class="social__media-block ">
                         <span class="title__footer-social">
                             Social Network
                         </span>
@@ -43,7 +43,7 @@
                     </div>
 
                 </div>
-                <div class="block__footer-top">
+                <div class="block__footer-top  wow fadeInUp">
 				<?php
 				  if( have_rows('menu_footer') ):              
 					while( have_rows('menu_footer') ):
@@ -74,7 +74,7 @@
 
                 </div>
             </div>
-            <div class="block-footer__bottom">
+            <div class="block-footer__bottom  wow fadeInUp">
                 <div class="footer__container-bottom">
                      <div class="footer-contact__information">
                          <h2 class="title__contact-footer">Contact Details</h2>
