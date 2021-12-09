@@ -64,11 +64,11 @@ if(have_posts()):
     </div>
     </div>
 
-    <div class="wrapper">
+    <div class=" wrapper">
       <div class="container">
-        <section class="banner-section__information">
+        <section class="banner-section__information wow fadeInUp"  data-wow-duration="2s" data-wow-delay="5s">
             <div class="container">
-            <div class="banner-slider">
+            <div class="banner-slider ">
             <a href="#!" class="link__slider">
                 <img src="<?php echo  $featured_img_url  ?>" alt="banner-img" class="banner__img">
               </a>
@@ -180,7 +180,7 @@ wp_reset_postdata()
 </section>
 </div>
 </div> 
-<div class="wrapper">
+<div class="wrapper  wow fadeInUp"  data-wow-duration="2s" data-wow-delay="5s">
 <div class="container">
     <section class="packages">
         <h2>Package Summery Details</h2>

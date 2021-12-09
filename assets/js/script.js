@@ -1,3 +1,5 @@
+
+
 (function($) {
   // $(".rate-yo-navbar").rateYo({
   //   ratedFill: "#F2994A",
@@ -95,4 +97,5 @@ $('.popup-close-review').click(function(){
 // });
 
 
+new WOW().init();
 })( jQuery );
